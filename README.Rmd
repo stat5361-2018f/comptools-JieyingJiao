@@ -1,0 +1,40 @@
+---
+title: "README"
+output: pdf_document
+---
+
+This file shows the error that I encountered when compiling Advanced R using 
+Rbookdown.
+
+## 1
+
+Operation system: MacOS
+
+R Version: 3.5.1 (Feather Spray) 
+
+## 2
+Install packages. 
+
+There were a lot of error saying some package not found. Just install them and 
+rebuilt the book. Some packages are not available on cran and we need to install 
+through github, eg, devtool::install_github("r-lib/lobstr") for package "lobstr".
+
+## 3
+
+"Error in dev.control(displaylist = if (record) "enable" else "inhibit") : 
+dev.control() called without an open graphics device Calls: local ... call_block 
+-> block_exec -> chunk_device -> dev.control"
+
+Solution: download and install XQuartz (https://www.xquartz.org/) on computer. 
+Install package "cairo".
+
+## 4 
+
+"Error: The font "Inconsolata" cannot be found."
+
+Solution: install this font by homebrew. The following command was copied from 
+google (https://github.com/Homebrew/homebrew-cask-fonts).
+
+$ brew tap homebrew/cask-fonts
+
+$ brew cask install font-inconsolata
